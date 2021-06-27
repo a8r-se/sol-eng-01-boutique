@@ -36,7 +36,7 @@ spec:
     spec:
       containers:
         - name: server
-          image: ambmatt/frontend:v4
+          image: agervais/frontend:v0.3.1 # ambmatt/frontend:v4
           ports:
           - containerPort: 8080
             name: http
