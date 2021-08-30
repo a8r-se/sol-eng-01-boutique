@@ -30,13 +30,10 @@ spec:
     metadata:
       labels:
         app: frontend
-      annotations:
-        linkerd.io/inject: "enabled"
-        config.linkerd.io/skip-outbound-ports: "8081,8022,6000-7999"
     spec:
       containers:
         - name: server
-          image: agervais/frontend:v0.3.1 # ambmatt/frontend:v4
+          image: agervais/frontend:v0.3.1
           ports:
           - containerPort: 8080
             name: http
@@ -60,19 +57,19 @@ spec:
           - name: PORT
             value: "8080"
           - name: PRODUCT_CATALOG_SERVICE_ADDR
-            value: "productcatalogservice.boutique:3550"
+            value: "productcatalogservice.boutique-dev:3550"
           - name: CURRENCY_SERVICE_ADDR
-            value: "currencyservice.boutique:7000"
+            value: "currencyservice.boutique-dev:7000"
           - name: CART_SERVICE_ADDR
-            value: "cartservice:7070"
+            value: "cartservice.boutique-dev:7070"
           - name: RECOMMENDATION_SERVICE_ADDR
-            value: "recommendationservice.boutique:8080"
+            value: "recommendationservice.boutique-dev:8080"
           - name: SHIPPING_SERVICE_ADDR
-            value: "shippingservice.boutique:50051"
+            value: "shippingservice.boutique-dev:50051"
           - name: CHECKOUT_SERVICE_ADDR
-            value: "checkoutservice.boutique:5050"
+            value: "checkoutservice.boutique-dev:5050"
           - name: AD_SERVICE_ADDR
-            value: "adservice.boutique:9555"
+            value: "adservice.boutique-dev:9555"
           - name: ENV_PLATFORM
             value: "gcp"
           - name: JAEGER_SERVICE_ADDR

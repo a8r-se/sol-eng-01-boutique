@@ -28,9 +28,6 @@ spec:
       app: checkoutservice
   template:
     metadata:
-      annotations:
-        linkerd.io/inject: "enabled"
-        config.linkerd.io/skip-outbound-ports: "8081,8022,6000-7999"    
       labels:
         app: checkoutservice
     spec:
@@ -50,17 +47,17 @@ spec:
           - name: PORT
             value: "5050"
           - name: PRODUCT_CATALOG_SERVICE_ADDR
-            value: "productcatalogservice.boutique:3550"
+            value: "productcatalogservice.boutique-dev:3550"
           - name: SHIPPING_SERVICE_ADDR
-            value: "shippingservice.boutique:50051"
+            value: "shippingservice.boutique-dev:50051"
           - name: PAYMENT_SERVICE_ADDR
-            value: "paymentservice.boutique:50051"
+            value: "paymentservice.boutique-dev:50051"
           - name: EMAIL_SERVICE_ADDR
-            value: "emailservice:5000"
+            value: "emailservice.boutique-dev:5000"
           - name: CURRENCY_SERVICE_ADDR
-            value: "currencyservice.boutique:7000"
+            value: "currencyservice.boutique-dev:7000"
           - name: CART_SERVICE_ADDR
-            value: "cartservice.boutique:7070"
+            value: "cartservice.boutique-dev:7070"
           - name: JAEGER_SERVICE_ADDR
             value: "otel-collector.monitoring:14268"
           # - name: DISABLE_STATS

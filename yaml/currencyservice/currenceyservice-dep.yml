@@ -30,14 +30,11 @@ spec:
     metadata:
       labels:
         app: currencyservice
-      annotations:
-        linkerd.io/inject: "enabled"
-        config.linkerd.io/skip-outbound-ports: "8081,8022,6000-7999"
     spec:
       terminationGracePeriodSeconds: 5
       containers:
       - name: server
-        image: ambmatt/currencyservice:v4
+        image: agervais/currencyservice:v0.3.1
         ports:
         - name: grpc
           containerPort: 7000
