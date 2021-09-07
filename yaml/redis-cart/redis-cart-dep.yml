@@ -28,6 +28,8 @@ spec:
       app: redis-cart
   template:
     metadata:
+      annotations:
+        telepresence.getambassador.io/inject-traffic-agent: enabled
       labels:
         app: redis-cart
     spec:
