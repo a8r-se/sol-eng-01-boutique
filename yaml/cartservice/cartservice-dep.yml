@@ -28,6 +28,8 @@ spec:
       app: cartservice
   template:
     metadata:
+      annotations:
+        telepresence.getambassador.io/inject-traffic-agent: enabled    
       labels:
         app: cartservice
     spec:
