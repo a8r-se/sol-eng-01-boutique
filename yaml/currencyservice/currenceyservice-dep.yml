@@ -28,6 +28,8 @@ spec:
       app: currencyservice
   template:
     metadata:
+      annotations:
+        telepresence.getambassador.io/inject-traffic-agent: enabled
       labels:
         app: currencyservice
     spec:
