@@ -29,6 +29,8 @@ spec:
       app: paymentservice
   template:
     metadata:
+      annotations:
+        telepresence.getambassador.io/inject-traffic-agent: enabled
       labels:
         app: paymentservice
     spec:
