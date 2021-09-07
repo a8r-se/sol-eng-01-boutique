@@ -28,6 +28,8 @@ spec:
       app: checkoutservice
   template:
     metadata:
+      annotations:
+        telepresence.getambassador.io/inject-traffic-agent: enabled
       labels:
         app: checkoutservice
     spec:
