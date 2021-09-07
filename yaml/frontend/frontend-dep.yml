@@ -28,6 +28,8 @@ spec:
       app: frontend
   template:
     metadata:
+      annotations:
+        telepresence.getambassador.io/inject-traffic-agent: enabled
       labels:
         app: frontend
     spec:
