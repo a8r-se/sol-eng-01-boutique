@@ -28,6 +28,8 @@ spec:
       app: shippingservice
   template:
     metadata:
+      annotations:
+        telepresence.getambassador.io/inject-traffic-agent: enabled
       labels:
         app: shippingservice
     spec:
